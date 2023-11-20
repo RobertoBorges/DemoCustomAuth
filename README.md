@@ -1,4 +1,7 @@
+
 # Individual Authentication demo With Custom Attributes manager
+
+[![.NET](https://github.com/RobertoBorges/DemoCustomAuth/actions/workflows/dotnet.yml/badge.svg)](https://github.com/RobertoBorges/DemoCustomAuth/actions/workflows/dotnet.yml)
 
 This is a demo of how to use the Individual Authentication on AspNet Core with Razor Pages and Identity.
 
@@ -92,7 +95,7 @@ Feel free to use this code as you wish.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.txt) file for details
+This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details
 
 ## Acknowledgments
 
