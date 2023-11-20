@@ -27,60 +27,60 @@ user2@test.com | User
 
 The demo is based on the default Individual Authentication template with Razor Pages and Identity.
 
-The main part of this code is about the CustomAttribute class: 
-    
-    ```csharp
+The main part of this code is about the CustomAttribute class:
 
-            public string? Role { get; set; }
+```csharp
 
-            public void OnAuthorization(AuthorizationFilterContext context)
+        public string? Role { get; set; }
+
+        public void OnAuthorization(AuthorizationFilterContext context)
+        {
+            //check access 
+            if (CheckPermissions(context))
             {
-                //check access 
-                if (CheckPermissions(context))
-                {
-                    //all good, add optional code if you want. Or don't
-                }
-                else
-                {
-                    //DENIED!
-                    //return access denied on the razor page
-                    context.Result = new RedirectToRouteResult(new RouteValueDictionary(new { area = "Identity", page = "/Account/AccessDenied" }));
-                }
+                //all good, add optional code if you want. Or don't
             }
-
-            private bool CheckPermissions(AuthorizationFilterContext context)
+            else
             {
-                if (context.HttpContext.User?.Identity?.IsAuthenticated == true)
+                //DENIED!
+                //return access denied on the razor page
+                context.Result = new RedirectToRouteResult(new RouteValueDictionary(new { area = "Identity", page = "/Account/AccessDenied" }));
+            }
+        }
+
+        private bool CheckPermissions(AuthorizationFilterContext context)
+        {
+            if (context.HttpContext.User?.Identity?.IsAuthenticated == true)
+            {
+                //check if user is in role
+                if (!string.IsNullOrEmpty(Role) && context.HttpContext.User.IsInRole(Role))
                 {
-                    //check if user is in role
-                    if (!string.IsNullOrEmpty(Role) && context.HttpContext.User.IsInRole(Role))
-                    {
-                        return true;
-                    }
-                    //if the user is not in the role, we check if the role is empty
-                    //if the role is empty, we allow access
-                    else if (!string.IsNullOrEmpty(Role) && !context.HttpContext.User.IsInRole(Role))
-                    {
-                        return false;
-                    }
                     return true;
                 }
-                return false;
+                //if the user is not in the role, we check if the role is empty
+                //if the role is empty, we allow access
+                else if (!string.IsNullOrEmpty(Role) && !context.HttpContext.User.IsInRole(Role))
+                {
+                    return false;
+                }
+                return true;
             }
-    ```
+            return false;
+        }
+```
 
 This class receives a request when the user hits a Class with the custom Attribute e.g:
 
-    ```csharp
-    [MyAuth(Role = "Admin")]
-    public class AdminPageModel : PageModel
+```csharp
+[MyAuth(Role = "Admin")]
+public class AdminPageModel : PageModel
+{
+    public void OnGet()
     {
-        public void OnGet()
-        {
 
-        }
     }
-    ```
+}
+```
 
 From here you should be able to implement your own logic to check if the user is allowed to access the page or not.
 
