@@ -31,6 +31,9 @@ The main part of this code is about the CustomAttribute class:
 
 ```csharp
 
+    public class MyAuthAttribute : Attribute, IAuthorizationFilter
+    {
+
         public string? Role { get; set; }
 
         public void OnAuthorization(AuthorizationFilterContext context)
@@ -67,6 +70,7 @@ The main part of this code is about the CustomAttribute class:
             }
             return false;
         }
+    }
 ```
 
 This class receives a request when the user hits a Class with the custom Attribute e.g:
