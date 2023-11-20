@@ -7,4 +7,31 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+@if (User.Identity.IsAuthenticated)
+    {
+        <p>Claims available on the User object:</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Claim</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var claim in User.Claims)
+                {
+                    <tr>
+                        <td>@claim.Type</td>
+                        <td>@claim.Value</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p><a class="btn btn-primary btn-lg" href="/Identity/Account/Login">Login</a></p>
+    }
+
 </div>
