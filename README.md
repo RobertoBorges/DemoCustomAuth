@@ -19,12 +19,12 @@ It should create a local database "aspnet-DemoCustomAuth" and open a browser wit
 
 For a good test create two users and add some roles on the database.
 
-For my tests I used the following users:
+For tests use the following users:
 
-| User | Roles |
-| ---- | ----- |
-user1@test.com | Admin
-user2@test.com | User
+| User| Password | Roles |
+| ---- |--- | ----- |
+bob | Pass123$ | Admin
+alice | Pass123$ | User
 
 ## How it works
 
