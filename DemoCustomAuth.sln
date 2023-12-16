@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34302.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoCustomAuth", "DemoCustomAuth.csproj", "{EC024B6F-B10D-47A3-8589-64CCF25C8447}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoCustomAuth", "DemoWebApp\DemoCustomAuth.csproj", "{463625C1-BC9E-44D7-A583-549336E702B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyIdentityServer", "MyIdentityServer\MyIdentityServer.csproj", "{1795D375-FDEE-4299-B7E6-DF585BB27720}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DE933177-6B13-47D2-82F5-C9A5D30306D9}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +19,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EC024B6F-B10D-47A3-8589-64CCF25C8447}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC024B6F-B10D-47A3-8589-64CCF25C8447}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EC024B6F-B10D-47A3-8589-64CCF25C8447}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EC024B6F-B10D-47A3-8589-64CCF25C8447}.Release|Any CPU.Build.0 = Release|Any CPU
+		{463625C1-BC9E-44D7-A583-549336E702B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{463625C1-BC9E-44D7-A583-549336E702B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{463625C1-BC9E-44D7-A583-549336E702B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{463625C1-BC9E-44D7-A583-549336E702B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1795D375-FDEE-4299-B7E6-DF585BB27720}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1795D375-FDEE-4299-B7E6-DF585BB27720}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1795D375-FDEE-4299-B7E6-DF585BB27720}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1795D375-FDEE-4299-B7E6-DF585BB27720}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

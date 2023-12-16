@@ -9,7 +9,7 @@ This is a demo of how to use the Individual Authentication on AspNet Core with R
 
 With Visual Studio 2022, open the solution
 
-Apply pending migrations from a command prompt at your project directory:
+Apply pending migrations from a command prompt at your project directory under MyIdentityServer project:
 
 > PM> dotnet ef database update
 
